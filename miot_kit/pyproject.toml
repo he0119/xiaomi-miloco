@@ -1,14 +1,9 @@
-[build-system]
-requires = ["setuptools>=61", "wheel", "toml>=0.10.2"]
-build-backend = "setuptools.build_meta"
-
 [project]
 name = "miot_kit"
 version = "0.1.12"
 description = "MIoT Kit"
 authors = [{ name = "MIoT Development Team" }]
-readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.12"
 dependencies = [
     "aiocache>=0.12",
     "aiofiles>=24.1",
@@ -23,13 +18,10 @@ dependencies = [
     "toml>=0.10.2",
 ]
 
-[tool.setuptools]
-include-package-data = true
+[build-system]
+requires = ["uv_build>=0.9.9,<0.10.0"]
+build-backend = "uv_build"
 
-[tool.setuptools.packages.find]
-where = ["."]
-include = ["miot*"]
-
-[tool.setuptools.package-data]
-miot_kit = ["libs/**/*.*", "specs/*", "i18n/**/*.*", "configs/*"]
-ha = []
+[tool.uv.build-backend]
+module-name = "miot"
+module-root = ""

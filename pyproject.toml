@@ -1,0 +1,15 @@
+[project]
+name = "xiaomi-miloco"
+version = "0.0.1"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = ["miloco_server", "miloco_ai_engine", "miot_kit"]
+
+[tool.uv.sources]
+miloco_server = { workspace = true }
+miloco_ai_engine = { workspace = true }
+miot_kit = { workspace = true }
+
+[tool.uv.workspace]
+members = ["miloco_server", "miloco_ai_engine", "miot_kit"]
